@@ -3,14 +3,45 @@
   margin: 10vh auto;
 }
 .card {
-  display: flex;
   max-width: 600px;
+  &.back-active .card__inner {
+    transform: rotateY(180deg);
+  }
+  .card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  } 
+  .card__back-container {
+    background-color: white;
+    height: 200px;
+    .card__content {
+      padding-bottom: 0px;
+      min-height: 200px;
+    }
+  }
+  .card__front-container {
+    display: flex;
+  }
+  .card__front, .card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: white;
+  }
+  .card__back {
+    transform: rotateY(180deg);
+    background-color: dodgerblue;
+  }
   .card__image-container {
     flex-basis: 35%;
     .card__image-container__image-holder {
       height: 100%;
       position:relative;
-          background:   url("../../casino.jpg")no-repeat;
+      background:   url("../../casino.jpg")no-repeat;
       background-size: cover;
       background-position: center;
     }
@@ -56,7 +87,15 @@
         background-color: gold;
       }
     }
-
-
+  }
+  .card__subtitle {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .card__text {
+    position: relative;
+    height: 80px;
+    overflow-y: scroll;
+    margin: 10px 10px 10px 0;
   }
 }
