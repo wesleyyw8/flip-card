@@ -107,7 +107,6 @@
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 12px; }
     .main .card__buttons button:hover {
       background-color: #a9a7a7; }
@@ -121,3 +120,26 @@
   left: 10px;
   right: 0;
   display: block; }
+
+.main .card__back-container .card__content {
+  position: relative; }
+
+@media only screen and (max-width: 320px) {
+  .main .scene {
+    max-width: 320px; }
+  .main .card__text {
+    height: 340px; }
+  .main .card__front-container {
+    flex-direction: column; }
+  .main .card__image-container {
+    height: 220px; }
+  .main .card__back-container {
+    height: 486px; }
+  .main .card__content {
+    padding-right: 10px; }
+  .main .card__buttons {
+    flex-direction: column; }
+    .main .card__buttons .card__buttons-others {
+      order: 2;
+      display: flex;
+      margin-top: 5px; } }

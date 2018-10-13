@@ -83,7 +83,6 @@
     margin-top: 10px;
   }
   .card__text {
-    //position: relative;
     min-height: 80px;
     height: 80px;
     overflow-y: scroll;
@@ -111,7 +110,6 @@
       padding: 5px 10px;
       text-align: center;
       text-decoration: none;
-      display: inline-block;
       font-size: 12px;
       &:hover {
         background-color: #a9a7a7;
@@ -129,5 +127,38 @@
     right: 0;
     display: block;
   }
+  .card__back-container .card__content {
+    position: relative;
+  }
 }
 
+@media only screen and (max-width : 320px) {
+  .main {
+    .scene {
+      max-width: 320px;
+    }
+    .card__text {
+      height: 340px;
+    }
+    .card__front-container {
+      flex-direction: column;
+    }
+    .card__image-container {
+      height: 220px;
+    }
+    .card__back-container {
+      height: 486px;
+    }
+    .card__content {
+      padding-right: 10px;
+    }
+    .card__buttons {
+      flex-direction: column;
+      .card__buttons-others {
+        order: 2;
+        display: flex;
+        margin-top: 5px;
+      }
+    }
+  }
+}
