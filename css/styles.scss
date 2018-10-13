@@ -4,6 +4,11 @@
     height: 210px;
     perspective: 1000px;
     position: relative;
+    @media only screen and (min-width : 321px) {
+      overflow: hidden;
+      border: 1px solid #868686;
+      box-shadow: 1px 1px 3px 2px #ccc;
+    }
   }
   .card {
     width: 100%;
@@ -37,7 +42,6 @@
   }
 }
 
-
 .main {
   .card__front-container, .card__back-container {
     display: flex;
@@ -55,10 +59,8 @@
     }
   }
   .card__content {
-    border: 1px solid #868686;
     padding-left: 10px;
     padding-bottom: 15px;
-    box-shadow: 1px 1px 3px 2px #ccc;
   }
   .card__front-container .card__content {
     flex-basis: 65%;
@@ -129,13 +131,33 @@
   }
   .card__back-container .card__content {
     position: relative;
-  }
+  } 
+}
+
+.card__ribbon {
+  width: 120px;
+  padding: 5px 35px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  background-color: gold;
+  top: 25px;
+  right: -50px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  box-shadow: 1px 1px 3px 2px #ccc;
 }
 
 @media only screen and (max-width : 320px) {
   .main {
+    .card__ribbon {
+      display: none;
+    }
     .scene {
-      max-width: 320px;
+      max-width: 295px;
     }
     .card__text {
       height: 340px;
@@ -151,6 +173,8 @@
     }
     .card__content {
       padding-right: 10px;
+      box-shadow: 1px 1px 3px 2px #ccc;
+      border: 1px solid black;
     }
     .card__buttons {
       flex-direction: column;
